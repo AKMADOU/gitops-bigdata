@@ -1,0 +1,21 @@
+ # minio-helm-application-argo.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-msteams
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL:  https://github.com/AKMADOU/gitops-bigdata.git
+    path: prometheus-msteams
+    targetRevision: main
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

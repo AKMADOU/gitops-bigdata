@@ -1,0 +1,22 @@
+ # minio-helm-application-argo.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: airbyte
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL:  https://github.com/AKMADOU/gitops-bigdata.git
+    path: airbyte
+    targetRevision: main
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: airbyte
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
