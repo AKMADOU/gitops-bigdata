@@ -1,0 +1,17 @@
+annotations:
+  artifacthub.io/links: |
+    - name: Helm chart source
+      url: https://github.com/deliveryhero/helm-charts/tree/master/stable/metabase
+apiVersion: v2
+appVersion: v0.45.2
+description: The easy, open source way for everyone in your company to ask questions
+  and learn from data.
+home: http://www.metabase.com/
+icon: http://www.metabase.com/images/logo.svg
+maintainers:
+- name: nyambati
+  url: https://github.com/nyambati
+name: metabase
+sources:
+- https://github.com/metabase/metabase
+version: 0.14.4

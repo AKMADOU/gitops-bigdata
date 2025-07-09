@@ -1,0 +1,111 @@
+---
+replicaCount: 1
+
+image:
+  repository: quay.io/prometheusmsteams/prometheus-msteams
+  tag: v1.5.2
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+
+extraEnvs: {}
+
+container:
+  port: 2000
+  additionalArgs: []
+
+resources:
+ limits:
+   cpu: 10m
+   memory: 32Mi
+ requests:
+   cpu: 1m
+   memory: 8Mi
+
+service:
+  type: NodePort
+  port: 2000
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: gs2e.node.type
+              operator: In
+              values:
+                - services
+                - analytics
+
+containerSecurityContext: {}
+
+podSecurityContext:
+  runAsUser: 1000
+  runAsNonRoot: true
+
+priorityClassName: ""
+
+# Custom labels for pod assignment
+podLabels: {}
+
+metrics:
+  serviceMonitor:
+    enabled: false
+    additionalLabels: {}
+    scrapeInterval: 30s
+
+## Specify the custom message card template for MS teams
+customCardTemplate: ""
+# customCardTemplate: |
+#   {{ define "teams.card" }}
+#   {...}
+#   {{ end }}
+
+templateFile: /etc/template/card.tmpl
+
+extraConfigmapMounts: []
+# extraConfigmapMounts:
+#   - name: customConfigMap
+#     configMap:
+#       name: customConfigMapName
+
+## Additional Volume mounts
+extraVolumeMounts: []
+# extraVolumeMounts:
+#   - name: volume-name
+#     mountPath: /etc/custom_path
+
+connectors:
+- notification: https://ciesodecigs2e.webhook.office.com/webhookb2/104c0d18-3248-4515-b4fc-43a2b6d1455d@8b325ea8-8f55-4c21-aa11-dc1c7f9776c0/IncomingWebhook/0f5b8ba4390d4a3e9de72097a5655699/d5602641-f48f-452e-864b-a63a66d1edc0/V2pviQSze8uCnM14fdX3IyaZY0F09NCJYABWhfPFce8d81
+
+
+# ref: https://github.com/prometheus-msteams/prometheus-msteams#customise-messages-per-ms-teams-channel
+connectorsWithCustomTemplates: []
+# - request_path: /alert2
+#   template_file: |
+#     {{ define "teams.card" }}
+#     {...}
+#     {{ end }}
+#   webhook_url: <webhook>
+#   escape_underscores: true
+
+# Env from existing secrets or configmaps (in same namespace), will passed through to contains 'envFrom'
+envFrom: {}
+# envFrom:
+#   - secretRef:
+#       name: my-prometheus-msteams-env-secret
+#   - configMapRef:
+#       name: my-prometheus-msteams-env-cm
