@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL:  https://github.com/AKMADOU/gitops-bigdata.git
-    path: airbyte
+    path: charts/airbyte
     targetRevision: main
   destination:
     server: "https://kubernetes.default.svc"
