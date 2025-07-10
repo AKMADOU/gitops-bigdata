@@ -1,6 +1,6 @@
 
 
-# 🚀 GS2E GitOps Big Data
+# 🚀 AKM GitOps Big Data
 
 Ce dépôt contient l'infrastructure GitOps de **GS2E** pour déployer et gérer un écosystème **Big Data** sur Kubernetes à l'aide de **Helm** et **ArgoCD**.
 
