@@ -1,6 +1,4 @@
-Voici une version améliorée de ton README qui intègre toutes les étapes récentes que tu as réalisées, notamment avec **ArgoCD**, **Minikube**, et le déploiement GitOps de Kafka et Metabase. J'ai aussi ajouté plus de structure et de clarté :
 
----
 
 # 🚀 GS2E GitOps Big Data
 
