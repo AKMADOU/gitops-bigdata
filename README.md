@@ -185,47 +185,22 @@ minikube service metabase -n metabase
 * Utiliser des **tags immuables** pour les images Docker.
 * Versionner les `values.yaml` spécifiques par environnement.
 * Toujours utiliser les dossiers `apps/` pour la gestion via ArgoCD.
-* Ne pas exposer ArgoCD en production sans HTTPS + Auth renforcée.
-
 ---
 
 ## 📚 Ressources utiles
 
-* [Documentation ArgoCD](https://argo-cd.readthedocs.io/)
-* [Helm Charts](https://helm.sh/docs/)
-* [Kubernetes Concepts](https://kubernetes.io/docs/concepts/)
-* [Minikube](https://minikube.sigs.k8s.io/)
+- **Documentation ArgoCD** :https://argo-cd.readthedocs.io/
+- **Helm Charts** : https://helm.sh/docs/
+- **Kubernetes Concepts** : https://kubernetes.io/docs/concepts/
+- **Minikube** : https://minikube.sigs.k8s.io/
 
 ---
 
-## 📄 Licence
 
-Voir les licences spécifiques dans chaque dossier `charts/`.
-
----
-
-Parfait ! Voici ce que je peux te proposer pour **professionnaliser encore davantage ton README** :
-
----
-
-## ✅ 1. Logo du projet
-
-Tu peux intégrer un logo en haut de ton README. Si tu n'en as pas encore, voici un logo temporaire que tu peux utiliser :
-
-```md
-<p align="center">
-  <img src="https://img.icons8.com/clouds/500/big-data.png" width="150"/>
-</p>
-
-<h1 align="center">GS2E GitOps Big Data</h1>
-<p align="center">Infrastructure GitOps Kubernetes pour un écosystème Big Data moderne</p>
-```
-
----
 
 ## 🗺️ 2. Diagramme d’architecture
 
-Voici un **diagramme d’architecture** simplifié de ton stack que je peux générer (ou te proposer en image).
+Voici le **diagramme d’architecture** simplifié de mon stack.
 
 ### Schéma de base :
 
@@ -248,23 +223,8 @@ Voici un **diagramme d’architecture** simplifié de ton stack que je peux gén
    +-------------------+
 ```
 
-Souhaites-tu un diagramme visuel (PNG/Markdown) de ce genre ? Je peux te le générer.
-
 ---
 
-## 🏅 3. Badges Markdown
-
-Ajoute-les en haut de ton README pour une touche pro :
-
-```md
-![Kubernetes](https://img.shields.io/badge/kubernetes-%23181717.svg?style=flat&logo=kubernetes&logoColor=white)
-![Helm](https://img.shields.io/badge/helm-%23000000.svg?style=flat&logo=helm&logoColor=white)
-![ArgoCD](https://img.shields.io/badge/ArgoCD-blue?logo=argo)
-![GitOps](https://img.shields.io/badge/GitOps-Automated-blueviolet?logo=git)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-```
-
----
 
 ## 📋 4. Table des matières (automatique)
 
