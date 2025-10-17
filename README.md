@@ -90,7 +90,7 @@ Ouvrir dans le navigateur : [http://localhost:8080](http://localhost:8080)
 ```bash
 argocd login localhost:8080 --insecure
 
-argocd repo add https://github.com/AKMADOU/gitops-bigdata.git
+argocd repo add https://github.com/username/projet_name.git
 ```
 
 ---
