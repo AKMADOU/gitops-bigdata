@@ -109,7 +109,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/AKMADOU/gitops-bigdata.git
+    repoURL: https://github.com/username/projet_name.git
     path: kafka
     targetRevision: main
   destination:
